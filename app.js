@@ -10,6 +10,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 require('dotenv').config()
 
@@ -27,6 +28,8 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(cors());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -6,8 +6,8 @@ let postSchema = new mongoose.Schema({
     handle: {type: String},
     date: {type: Date, default: Date.now},
     text: {type: String},
-    likes: {type: Number},
-    //comments: [{type: ObjectId, ref: 'Comment'}]
+    likes: {type: Number, default: 0},
+    comments: {type: Number, default: 0}
 })
 
 module.exports = mongoose.model('Post', postSchema);
